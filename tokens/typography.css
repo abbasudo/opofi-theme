@@ -1,0 +1,30 @@
+:root{
+--font-sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+--font-body:var(--font-sans);
+--font-display:var(--font-sans);
+--font-numeric:var(--font-sans);
+/* sizes */
+--text-hero:36px;
+--text-number-lg:32px;
+--text-number:28px;
+--text-title:24px;
+--text-number-sm:22px;
+--text-h2:20px;
+--text-h3:18px;
+--text-section:16px;
+--text-emph:15px;
+--text-body:14px;
+--text-small:13px;
+--text-label:12px;
+--text-micro:11px;
+/* weights: 400 body, 500 everything emphasized. 600 exists but is rarely used. */
+--weight-regular:400;
+--weight-medium:500;
+--weight-semibold:600;
+/* line heights */
+--leading-tight:1.1;
+--leading-snug:1.35;
+--leading-normal:1.4;
+--leading-relaxed:1.5;
+--leading-loose:1.6;
+}

@@ -1,0 +1,6 @@
+@keyframes opofi-shimmer{0%{opacity:.5}50%{opacity:1}100%{opacity:.5}}
+@keyframes opofi-spin{to{transform:rotate(360deg)}}
+.opofi-root,.opofi-root *{box-sizing:border-box}
+.opofi-root{margin:0;background:var(--bg-page);color:var(--text-primary);font-family:var(--font-body);font-size:var(--text-body);line-height:var(--leading-normal);font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+.opofi-root a{color:var(--accent);text-decoration:none}
+.opofi-root a:hover{color:var(--accent-hover)}

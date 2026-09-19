@@ -1,0 +1,42 @@
+:root{
+--space-1:2px;
+--space-2:4px;
+--space-3:6px;
+--space-4:8px;
+--space-5:10px;
+--space-6:12px;
+--space-7:14px;
+--space-8:16px;
+--space-9:20px;
+--space-10:24px;
+--space-11:32px;
+--space-12:40px;
+/* density per workspace */
+--gap-trade:8px;
+--gap-invest:16px;
+--gap-page-trade:16px;
+--gap-page-invest:24px;
+/* layout */
+--sidebar-width:240px;
+--sidebar-width-collapsed:64px;
+--topbar-height:56px;
+--side-panel-width:440px;
+--page-padding-x:32px;
+--page-padding-y-trade:24px;
+--page-padding-y-invest:32px;
+--mobile-tabbar-height:64px;
+/* control sizes */
+--control-height-sm:36px;
+--control-height:40px;
+--control-height-lg:44px;
+--control-height-xl:48px;
+--table-row-height:40px;
+--table-row-height-invest:44px;
+--table-header-height:40px;
+--nav-item-padding:9px 12px;
+--card-padding-trade:16px;
+--card-padding-invest:24px;
+--tile-padding:10px;
+--pill-padding:2px 8px;
+--chip-padding:5px 12px;
+}

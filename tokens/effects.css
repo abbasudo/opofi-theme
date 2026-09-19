@@ -1,0 +1,27 @@
+:root{
+/* radii */
+--radius-xs:3px;
+--radius-sm:4px;
+--radius-md:6px;
+--radius-control:8px;
+--radius-card:12px;
+--radius-frame:16px;
+--radius-pill:999px;
+/* borders */
+--border-width:1px;
+--nav-active-bar:3px;
+/* shadows: the system uses none on cards. Only the focus ring. */
+--shadow-none:none;
+--focus-ring:0 0 0 3px var(--accent-ring);
+--focus-border:1px solid var(--accent);
+/* motion */
+--ease:cubic-bezier(.2,.7,.2,1);
+--duration-fast:120ms;
+--duration:180ms;
+--skeleton-duration:1.4s;
+/* bars */
+--bar-height:6px;
+--bar-height-lg:8px;
+--dot-size:6px;
+--notification-dot:7px;
+}
