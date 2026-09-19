@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#020508;font-family:Inter,system-ui,sans-serif;color:#fff;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased;font-size:14px;line-height:1.4}
+a{color:#5ce1e6;text-decoration:none}a:hover{color:#8ef0f4}
+*{box-sizing:border-box}
+@keyframes shimmer{0%{opacity:.5}50%{opacity:1}100%{opacity:.5}}
+@keyframes flowRight{0%{left:0;opacity:0}12%{opacity:1}88%{opacity:1}100%{left:calc(100% - 8px);opacity:0}}
+@keyframes flowLeft{0%{left:calc(100% - 8px);opacity:0}12%{opacity:1}88%{opacity:1}100%{left:0;opacity:0}}
+</style>
+</helmet>
+<div style="display:flex;align-items:center;gap:20px;padding:20px 48px;border-bottom:1px solid rgba(255,255,255,0.08);font-size:13px"><a href="Opofi%20Dashboard.dc.html" style="color:#9aa6ba" style-hover="color:#fff">Overview</a><a href="Opofi%20Invest.dc.html" style="color:#9aa6ba" style-hover="color:#fff">Invest</a><a href="Opofi%20Prop.dc.html" style="color:#9aa6ba" style-hover="color:#fff">Prop</a><a href="Opofi%20Shared.dc.html" style="color:#9aa6ba" style-hover="color:#fff">Shared</a><span style="color:#fff;font-weight:500">Components</span></div>
+<section style="display:flex;flex-direction:column;gap:72px;padding:48px;width:max-content">
+<div style="display:flex;flex-direction:column;gap:6px"><div style="font-size:28px;font-weight:500;color:#fff;line-height:1.1">06 · Foundations for engineering</div><div style="font-size:14px;color:#9aa6ba">Tokens and the component inventory every screen above is built from.</div></div>
+
+<div id="t00" data-screen-label="00 Tokens">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px"><span style="font-size:12px;color:#9aa6ba;border:1px solid rgba(255,255,255,0.12);border-radius:6px;padding:2px 8px">1a</span><span style="font-size:13px;color:#9aa6ba">00 Tokens</span></div>
+  <div style="width:1440px;background:#060b14;border:1px solid rgba(255,255,255,0.09);border-radius:16px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px">
+    <div>
+      <div style="font-size:16px;font-weight:500;margin-bottom:16px">Palette</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+        <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:12px"><div style="height:48px;border-radius:8px;background:#060b14;border:1px solid rgba(255,255,255,0.09)"></div><div style="margin-top:10px;font-size:13px">Navy</div><div style="font-size:12px;color:#9aa6ba">#060b14 · page</div></div>
+        <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:12px"><div style="height:48px;border-radius:8px;background:#0b1220;border:1px solid rgba(255,255,255,0.09)"></div><div style="margin-top:10px;font-size:13px">Ink</div><div style="font-size:12px;color:#9aa6ba">#0b1220 · card</div></div>
+        <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:12px"><div style="height:48px;border-radius:8px;background:#111a2b"></div><div style="margin-top:10px;font-size:13px">Surface 2</div><div style="font-size:12px;color:#9aa6ba">#111a2b · nested tile</div></div>
+        <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:12px"><div style="height:48px;border-radius:8px;background:rgba(255,255,255,0.09)"></div><div style="margin-top:10px;font-size:13px">Hairline</div><div style="font-size:12px;color:#9aa6ba">white 9%</div></div>
+        <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:12px"><div style="height:48px;border-radius:8px;background:#5ce1e6"></div><div style="margin-top:10px;font-size:13px">Cyan</div><div style="font-size:12px;color:#9aa6ba">#5ce1e6 · Trade accent</div></div>
+        <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:12px"><div style="height:48px;border-radius:8px;background:#8ef0f4"></div><div style="margin-top:10px;font-size:13px">Cyan light</div><div style="font-size:12px;color:#9aa6ba">#8ef0f4 · hover</div></div>
+        <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:12px"><div style="height:48px;border-radius:8px;background:#c4b5fd"></div><div style="margin-top:10px;font-size:13px">Lavender</div><div style="font-size:12px;color:#9aa6ba">#c4b5fd · Invest accent</div></div>
+        <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:12px"><div style="height:48px;border-radius:8px;background:#ffffff"></div><div style="margin-top:10px;font-size:13px">White</div><div style="font-size:12px;color:#9aa6ba">#ffffff · text, shared primary</div></div>
+        <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:12px"><div style="height:48px;border-radius:8px;background:#9aa6ba"></div><div style="margin-top:10px;font-size:13px">Muted grey</div><div style="font-size:12px;color:#9aa6ba">#9aa6ba · labels</div></div>
+        <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:12px"><div style="height:48px;border-radius:8px;background:#34d399"></div><div style="margin-top:10px;font-size:13px">Green</div><div style="font-size:12px;color:#9aa6ba">#34d399 · profit, success</div></div>
+        <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:12px"><div style="height:48px;border-radius:8px;background:#f5b544"></div><div style="margin-top:10px;font-size:13px">Amber</div><div style="font-size:12px;color:#9aa6ba">#f5b544 · warning, near limit</div></div>
+        <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:12px"><div style="height:48px;border-radius:8px;background:#f26d6d"></div><div style="margin-top:10px;font-size:13px">Red</div><div style="font-size:12px;color:#9aa6ba">#f26d6d · danger, breach, loss</div></div>
+      </div>
+      <div style="font-size:16px;font-weight:500;margin:32px 0 16px">Surfaces and spacing</div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:16px;width:200px"><div style="font-size:12px;color:#9aa6ba">Card</div><div style="font-size:13px;margin-top:4px">12 px radius · hairline · no shadow</div><div style="margin-top:12px;background:#111a2b;border-radius:8px;padding:10px;font-size:12px;color:#9aa6ba">Nested tile · 8 px radius</div></div>
+        <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:16px;width:200px"><div style="font-size:12px;color:#9aa6ba">Density</div><div style="font-size:13px;margin-top:4px">Trade 8 px gaps</div><div style="font-size:13px;margin-top:2px">Invest 16 px gaps</div><div style="font-size:13px;margin-top:2px">Table rows 40 px</div></div>
+        <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:16px;width:200px"><div style="font-size:12px;color:#9aa6ba">Focus ring</div><div style="margin-top:8px;height:36px;border-radius:8px;border:1px solid #5ce1e6;box-shadow:0 0 0 3px rgba(92,225,230,0.25);background:#111a2b"></div><div style="font-size:12px;color:#9aa6ba;margin-top:6px">accent 1 px + 3 px 25%</div></div>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:16px;font-weight:500;margin-bottom:16px">Typography · Inter</div>
+      <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:24px;display:grid;grid-template-columns:140px 1fr;row-gap:20px;align-items:baseline">
+        <div style="font-size:12px;color:#9aa6ba">Page title 24 / 500</div><div style="font-size:24px;font-weight:500">My challenges</div>
+        <div style="font-size:12px;color:#9aa6ba">Large number 24 / 500</div><div style="font-size:24px;font-weight:500">$100,860.00</div>
+        <div style="font-size:12px;color:#9aa6ba">Section 16 / 500</div><div style="font-size:16px;font-weight:500">Next payout</div>
+        <div style="font-size:12px;color:#9aa6ba">Body 14 / 400</div><div style="font-size:14px">Your daily loss limit resets at 00:00 server time.</div>
+        <div style="font-size:12px;color:#9aa6ba">Label 12 / 400</div><div style="font-size:12px;color:#9aa6ba">Daily loss limit</div>
+        <div style="font-size:12px;color:#9aa6ba">Tabular figures</div><div style="font-size:14px;display:flex;flex-direction:column;gap:2px;width:120px;text-align:right"><span>$101,240</span><span>$25,910</span><span>$9,480</span></div>
+      </div>
+      <div style="font-size:16px;font-weight:500;margin:32px 0 16px">Accent rule</div>
+      <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:20px;font-size:14px;color:#9aa6ba;line-height:1.6">Workspace accent appears only on the active nav item, the single primary button per view, focus rings, chart lines and links. Semantic colors are identical in both workspaces. Shared pages use white for the primary button.</div>
+      <div style="font-size:16px;font-weight:500;margin:32px 0 16px">Iconography · 20 px outline · 1.5 stroke</div>
+      <div style="display:flex;gap:16px;color:#9aa6ba;flex-wrap:wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4.5"></circle><circle cx="12" cy="12" r="1"></circle></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v8M8 12h8"></path></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2.5" y="6" width="19" height="12" rx="2"></rect><circle cx="12" cy="12" r="2.5"></circle></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-7 4 14 3-7h4"></path></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H19v14H5.5A1.5 1.5 0 0 0 4 19.5z"></path><path d="M4 19.5V5.5M8 8h7"></path></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="6" width="18" height="13" rx="2"></rect><path d="M3 10h18M16 14.5h2"></path></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8.5" r="3.5"></circle><path d="M5 19.5c1.2-3.3 3.8-5 7-5s5.8 1.7 7 5"></path></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="8.5" r="3"></circle><circle cx="16.5" cy="9.5" r="2.5"></circle><path d="M3 19c1-3 3.2-4.5 6-4.5s5 1.5 6 4.5M15 15c2.4 0 4.2 1.2 5 3.5"></path></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5a2.5 2.5 0 0 1 5 0c0 1.8-2.5 2-2.5 4"></path><circle cx="12" cy="17" r="0.6" fill="currentColor"></circle></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10a6 6 0 0 1 12 0v4l1.5 2.5h-15L6 14zM10 19.5a2 2 0 0 0 4 0"></path></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15V6a2 2 0 0 1 2-2h9"></path></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4 4"></path></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="t04" data-screen-label="02 Components">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px"><span style="font-size:12px;color:#9aa6ba;border:1px solid rgba(255,255,255,0.12);border-radius:6px;padding:2px 8px">1e</span><span style="font-size:13px;color:#9aa6ba">02 Components · default, hover, active, disabled, warning, danger</span></div>
+  <div style="width:1440px;background:#060b14;border:1px solid rgba(255,255,255,0.09);border-radius:16px;padding:40px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px 40px;align-items:start">
+
+    <!-- Buttons -->
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="font-size:16px;font-weight:500">Buttons</div>
+      <div style="display:grid;grid-template-columns:auto 1fr 1fr 1fr 1fr;gap:8px 12px;align-items:center;font-size:12px;color:#9aa6ba">
+        <span></span><span>Default</span><span>Hover</span><span>Active</span><span>Disabled</span>
+        <span>Trade</span>
+        <div style="height:36px;border-radius:8px;background:#5ce1e6;color:#060b14;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center">Choose $50K</div>
+        <div style="height:36px;border-radius:8px;background:#8ef0f4;color:#060b14;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center">Choose $50K</div>
+        <div style="height:36px;border-radius:8px;background:#3fc9ce;color:#060b14;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center">Choose $50K</div>
+        <div style="height:36px;border-radius:8px;background:rgba(92,225,230,0.25);color:rgba(6,11,20,0.7);font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center">Choose $50K</div>
+        <span>Invest</span>
+        <div style="height:36px;border-radius:8px;background:#c4b5fd;color:#060b14;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center">Start</div>
+        <div style="height:36px;border-radius:8px;background:#d6cbff;color:#060b14;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center">Start</div>
+        <div style="height:36px;border-radius:8px;background:#ab99f2;color:#060b14;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center">Start</div>
+        <div style="height:36px;border-radius:8px;background:rgba(196,181,253,0.25);color:rgba(6,11,20,0.7);font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center">Start</div>
+        <span>Shared</span>
+        <div style="height:36px;border-radius:8px;background:#fff;color:#060b14;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center">Deposit</div>
+        <div style="height:36px;border-radius:8px;background:#e6e9ef;color:#060b14;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center">Deposit</div>
+        <div style="height:36px;border-radius:8px;background:#c9cfd9;color:#060b14;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center">Deposit</div>
+        <div style="height:36px;border-radius:8px;background:rgba(255,255,255,0.2);color:rgba(6,11,20,0.7);font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center">Deposit</div>
+        <span>Secondary</span>
+        <div style="height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.14);color:#fff;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center">Withdraw</div>
+        <div style="height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.24);background:#111a2b;color:#fff;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center">Withdraw</div>
+        <div style="height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.24);background:#0b1220;color:#fff;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center">Withdraw</div>
+        <div style="height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.35);font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center">Withdraw</div>
+        <span>Danger</span>
+        <div style="height:36px;border-radius:8px;border:1px solid rgba(242,109,109,0.4);color:#f26d6d;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center">Cancel position</div>
+        <div style="height:36px;border-radius:8px;border:1px solid rgba(242,109,109,0.6);background:rgba(242,109,109,0.1);color:#f26d6d;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center">Cancel position</div>
+        <div style="height:36px;border-radius:8px;background:#f26d6d;color:#060b14;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center">Cancel position</div>
+        <div style="height:36px;border-radius:8px;border:1px solid rgba(242,109,109,0.15);color:rgba(242,109,109,0.4);font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center">Cancel position</div>
+      </div>
+      <div style="font-size:16px;font-weight:500;margin-top:12px">Inputs</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div><div style="font-size:12px;color:#9aa6ba;margin-bottom:6px">Amount</div><div style="height:40px;border-radius:8px;border:1px solid rgba(255,255,255,0.14);background:#0b1220;display:flex;align-items:center;justify-content:space-between;padding:0 12px;font-size:14px"><span>500.00</span><span style="font-size:12px;color:#5ce1e6">Max</span></div></div>
+        <div><div style="font-size:12px;color:#9aa6ba;margin-bottom:6px">Focused</div><div style="height:40px;border-radius:8px;border:1px solid #5ce1e6;box-shadow:0 0 0 3px rgba(92,225,230,0.25);background:#0b1220;display:flex;align-items:center;padding:0 12px;font-size:14px">TQn4…8xKp<span style="width:1px;height:16px;background:#fff;margin-left:2px"></span></div></div>
+        <div><div style="font-size:12px;color:#9aa6ba;margin-bottom:6px">Error</div><div style="height:40px;border-radius:8px;border:1px solid #f26d6d;background:#0b1220;display:flex;align-items:center;padding:0 12px;font-size:14px">25.00</div><div style="font-size:12px;color:#f26d6d;margin-top:4px">Minimum withdrawal is $50</div></div>
+        <div><div style="font-size:12px;color:#9aa6ba;margin-bottom:6px">Disabled</div><div style="height:40px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);background:#0b1220;display:flex;align-items:center;padding:0 12px;font-size:14px;color:rgba(255,255,255,0.35)">TRC20</div></div>
+      </div>
+      <div style="display:flex;gap:16px;align-items:center;margin-top:4px">
+        <div style="display:flex;align-items:center;gap:8px;font-size:13px"><span style="width:18px;height:18px;border-radius:4px;background:#5ce1e6;display:flex;align-items:center;justify-content:center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#060b14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg></span>I accept rules v1</div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:13px"><span style="width:18px;height:18px;border-radius:4px;border:1px solid rgba(255,255,255,0.24)"></span>Unchecked</div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:13px"><span style="width:34px;height:20px;border-radius:10px;background:#5ce1e6;position:relative"><span style="position:absolute;top:2px;right:2px;width:16px;height:16px;border-radius:50%;background:#060b14"></span></span>On</div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:13px"><span style="width:34px;height:20px;border-radius:10px;background:#111a2b;border:1px solid rgba(255,255,255,0.14);position:relative"><span style="position:absolute;top:1px;left:1px;width:16px;height:16px;border-radius:50%;background:#9aa6ba"></span></span>Off</div>
+      </div>
+    </div>
+
+    <!-- Pills + metric tiles + limit bars -->
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="font-size:16px;font-weight:500">Status pills</div>
+      <div style="font-size:12px;color:#9aa6ba">Trade</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px">
+        <span style="font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(92,225,230,0.15);color:#5ce1e6">Active</span>
+        <span style="font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(245,181,68,0.15);color:#f5b544">Near limit</span>
+        <span style="font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(242,109,109,0.15);color:#f26d6d">Breached</span>
+        <span style="font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(52,211,153,0.15);color:#34d399">Passed</span>
+        <span style="font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(52,211,153,0.15);color:#34d399">Funded</span>
+        <span style="font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(245,181,68,0.15);color:#f5b544">Payout pending</span>
+      </div>
+      <div style="font-size:12px;color:#9aa6ba">Invest</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px">
+        <span style="font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(154,166,186,0.15);color:#9aa6ba">Locked</span>
+        <span style="font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(196,181,253,0.15);color:#c4b5fd">Flexible</span>
+        <span style="font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(52,211,153,0.15);color:#34d399">In profit</span>
+        <span style="font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(154,166,186,0.15);color:#9aa6ba">At breakeven</span>
+        <span style="font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(242,109,109,0.15);color:#f26d6d">In loss</span>
+        <span style="font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(196,181,253,0.15);color:#c4b5fd">Matured</span>
+        <span style="font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(52,211,153,0.15);color:#34d399">Paid</span>
+      </div>
+      <div style="font-size:12px;color:#9aa6ba">Shared</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px">
+        <span style="font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(245,181,68,0.15);color:#f5b544">Pending</span>
+        <span style="font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(52,211,153,0.15);color:#34d399">Confirmed</span>
+        <span style="font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(52,211,153,0.15);color:#34d399">Paid</span>
+        <span style="font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(242,109,109,0.15);color:#f26d6d">Rejected</span>
+        <span style="font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(245,181,68,0.15);color:#f5b544">Needs action</span>
+      </div>
+
+      <div style="font-size:16px;font-weight:500;margin-top:12px">Metric tile</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+        <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:12px"><div style="font-size:12px;color:#9aa6ba">Equity</div><div style="font-size:22px;font-weight:500;margin-top:2px">$100,860</div></div>
+        <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:12px"><div style="font-size:12px;color:#9aa6ba">Total P/L</div><div style="font-size:22px;font-weight:500;margin-top:2px">+$860</div><div style="font-size:12px;color:#34d399">+0.86%</div></div>
+        <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:12px"><div style="font-size:12px;color:#9aa6ba">Today</div><div style="font-size:22px;font-weight:500;margin-top:2px">−$1,380</div><div style="font-size:12px;color:#f26d6d">−1.36%</div></div>
+      </div>
+
+      <div style="font-size:16px;font-weight:500;margin-top:12px">Limit bar</div>
+      <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:12px">
+        <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px"><span style="color:#9aa6ba">Daily loss limit · healthy</span><span>$3,620 left of $5,000</span></div><div style="height:6px;border-radius:3px;background:#111a2b;overflow:hidden"><div style="width:27.6%;height:100%;background:rgba(255,255,255,0.6)"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px"><span style="color:#9aa6ba">Daily loss limit · under 30% left</span><span style="color:#f5b544">$1,200 left of $5,000</span></div><div style="height:6px;border-radius:3px;background:#111a2b;overflow:hidden"><div style="width:76%;height:100%;background:#f5b544"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px"><span style="color:#9aa6ba">Daily loss limit · under 10% left</span><span style="color:#f26d6d">$380 left of $5,000</span></div><div style="height:6px;border-radius:3px;background:#111a2b;overflow:hidden"><div style="width:92.4%;height:100%;background:#f26d6d"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px"><span style="color:#9aa6ba">Profit target · progress</span><span>$910 of $1,250</span></div><div style="height:6px;border-radius:3px;background:#111a2b;overflow:hidden"><div style="width:72.8%;height:100%;background:#34d399"></div></div></div>
+      </div>
+
+      <div style="font-size:16px;font-weight:500;margin-top:12px">Workspace switch · filter chips</div>
+      <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+        <div style="width:190px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center;gap:6px;font-size:13px;font-weight:500">Go to Invest <span style="color:#c4b5fd">→</span></div>
+        <div style="display:flex;gap:6px"><span style="font-size:13px;padding:5px 12px;border-radius:999px;background:#fff;color:#060b14">Active</span><span style="font-size:13px;padding:5px 12px;border-radius:999px;border:1px solid rgba(255,255,255,0.14);color:#9aa6ba">Passed</span><span style="font-size:13px;padding:5px 12px;border-radius:999px;border:1px solid rgba(255,255,255,0.24);background:#111a2b;color:#fff">Funded</span><span style="font-size:13px;padding:5px 12px;border-radius:999px;border:1px solid rgba(255,255,255,0.14);color:#9aa6ba">Failed</span></div>
+      </div>
+    </div>
+
+    <!-- Alerts, empty, toast, stepper, charts -->
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="font-size:16px;font-weight:500">Alert strip</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 14px;border-radius:8px;background:rgba(92,225,230,0.1);border:1px solid rgba(92,225,230,0.3);font-size:13px;color:#5ce1e6"><span>Credentials for your $50K challenge are ready.</span><span style="display:flex;gap:12px;align-items:center"><span style="font-weight:500;text-decoration:underline">Open</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 14px;border-radius:8px;background:rgba(245,181,68,0.12);border:1px solid rgba(245,181,68,0.3);font-size:13px;color:#f5b544"><span>$100K challenge has $3,620 left before today's limit.</span><span style="display:flex;gap:12px;align-items:center"><span style="font-weight:500;text-decoration:underline">Open account</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 14px;border-radius:8px;background:rgba(242,109,109,0.12);border:1px solid rgba(242,109,109,0.3);font-size:13px;color:#f26d6d"><span>$10K challenge breached the daily loss limit at 15:42.</span><span style="display:flex;gap:12px;align-items:center"><span style="font-weight:500;text-decoration:underline">Retry with 20% off</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span></div>
+
+      <div style="font-size:16px;font-weight:500;margin-top:12px">Empty state</div>
+      <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:32px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9aa6ba" stroke-width="1.5"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4.5"></circle><circle cx="12" cy="12" r="1"></circle></svg>
+        <div style="font-size:16px;font-weight:500">Start your first challenge</div>
+        <div style="font-size:14px;color:#9aa6ba">Pick a size, hit the targets, trade funded capital.</div>
+        <div style="height:36px;padding:0 16px;border-radius:8px;background:#5ce1e6;color:#060b14;font-size:14px;font-weight:500;display:flex;align-items:center;margin-top:8px">Browse challenges</div>
+      </div>
+
+      <div style="font-size:16px;font-weight:500;margin-top:12px">Toast</div>
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;background:#111a2b;border:1px solid rgba(255,255,255,0.14);font-size:13px;width:320px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg><span style="flex:1">Address copied</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9aa6ba" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></div>
+
+      <div style="font-size:16px;font-weight:500;margin-top:12px">Stepper</div>
+      <div style="display:flex;align-items:center;font-size:12px">
+        <div style="display:flex;align-items:center;gap:6px;color:#34d399"><span style="width:20px;height:20px;border-radius:50%;background:#34d399;display:flex;align-items:center;justify-content:center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#060b14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg></span>Requested</div>
+        <div style="flex:1;height:1px;background:#34d399;margin:0 8px"></div>
+        <div style="display:flex;align-items:center;gap:6px;color:#fff"><span style="width:20px;height:20px;border-radius:50%;border:2px solid #5ce1e6;display:flex;align-items:center;justify-content:center"><span style="width:6px;height:6px;border-radius:50%;background:#5ce1e6"></span></span>Reviewing</div>
+        <div style="flex:1;height:1px;background:rgba(255,255,255,0.14);margin:0 8px"></div>
+        <div style="display:flex;align-items:center;gap:6px;color:#9aa6ba"><span style="width:20px;height:20px;border-radius:50%;border:1px solid rgba(255,255,255,0.24)"></span>Approved</div>
+        <div style="flex:1;height:1px;background:rgba(255,255,255,0.14);margin:0 8px"></div>
+        <div style="display:flex;align-items:center;gap:6px;color:#9aa6ba"><span style="width:20px;height:20px;border-radius:50%;border:1px solid rgba(255,255,255,0.24)"></span>Paid</div>
+      </div>
+      <div style="display:flex;gap:12px;font-size:12px;margin-top:4px">
+        <div style="display:flex;flex-direction:column;align-items:center"><span style="width:20px;height:20px;border-radius:50%;background:#34d399;display:flex;align-items:center;justify-content:center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#060b14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg></span><span style="width:1px;flex:1;background:#34d399;min-height:20px"></span><span style="width:20px;height:20px;border-radius:50%;border:2px solid #5ce1e6;display:flex;align-items:center;justify-content:center"><span style="width:6px;height:6px;border-radius:50%;background:#5ce1e6"></span></span><span style="width:1px;flex:1;background:rgba(255,255,255,0.14);min-height:20px"></span><span style="width:20px;height:20px;border-radius:50%;border:1px solid rgba(255,255,255,0.24)"></span></div>
+        <div style="display:flex;flex-direction:column;justify-content:space-between"><span style="color:#34d399;line-height:20px">Size and platform</span><span style="color:#fff;line-height:20px">Rules acknowledgement</span><span style="color:#9aa6ba;line-height:20px">Payment</span></div>
+      </div>
+
+      <div style="font-size:16px;font-weight:500;margin-top:12px">Inline chart</div>
+      <div style="display:grid;grid-template-columns:1fr 2fr;gap:8px">
+        <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:12px"><div style="font-size:12px;color:#9aa6ba">Sparkline</div><svg viewBox="0 0 120 40" width="100%" height="40" preserveAspectRatio="none"><path d="M0 30 L15 26 L30 28 L45 18 L60 22 L75 12 L90 16 L105 8 L120 10 V40 H0 Z" fill="rgba(92,225,230,0.12)"></path><path d="M0 30 L15 26 L30 28 L45 18 L60 22 L75 12 L90 16 L105 8 L120 10" fill="none" stroke="#5ce1e6" stroke-width="1.5" vector-effect="non-scaling-stroke"></path></svg></div>
+        <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:12px"><div style="font-size:12px;color:#9aa6ba">Full chart with thresholds</div>
+          <svg viewBox="0 0 260 90" width="100%" height="90" font-family="Inter" font-size="7">
+            <line x1="0" y1="14" x2="260" y2="14" stroke="#34d399" stroke-dasharray="3 3" stroke-width="1"></line><text x="2" y="11" fill="#34d399">Profit target $108,000</text>
+            <line x1="0" y1="45" x2="260" y2="45" stroke="rgba(255,255,255,0.08)"></line>
+            <line x1="0" y1="66" x2="260" y2="66" stroke="#f5b544" stroke-dasharray="3 3"></line><text x="2" y="74" fill="#f5b544">Daily loss floor $96,240</text>
+            <line x1="0" y1="82" x2="260" y2="82" stroke="#f26d6d" stroke-dasharray="3 3"></line><text x="2" y="89" fill="#f26d6d">Max drawdown floor $90,000</text>
+            <path d="M0 50 L30 46 L60 52 L90 40 L120 44 L150 34 L180 38 L210 30 L240 42 L260 40 V90 H0 Z" fill="rgba(92,225,230,0.12)"></path>
+            <path d="M0 50 L30 46 L60 52 L90 40 L120 44 L150 34 L180 38 L210 30 L240 42 L260 40" fill="none" stroke="#5ce1e6" stroke-width="1.5"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Data table, spans 2 -->
+    <div style="grid-column:1/3;display:flex;flex-direction:column;gap:12px">
+      <div style="font-size:16px;font-weight:500">Data table · default, hover row, loading skeleton, empty</div>
+      <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.09);border-radius:12px;overflow:hidden;font-size:13px">
+        <div style="display:grid;grid-template-columns:1.4fr 0.8fr 0.8fr 1fr 1fr 1fr 0.8fr;padding:0 16px;height:40px;align-items:center;color:#9aa6ba;font-size:12px;border-bottom:1px solid rgba(255,255,255,0.09)"><span>Account</span><span>Phase</span><span>Status</span><span style="text-align:right">Equity</span><span style="text-align:right">Target progress</span><span style="text-align:right">Drawdown left</span><span style="text-align:right">Started</span></div>
+        <div style="display:grid;grid-template-columns:1.4fr 0.8fr 0.8fr 1fr 1fr 1fr 0.8fr;padding:0 16px;height:40px;align-items:center;border-bottom:1px solid rgba(255,255,255,0.09)"><span style="font-weight:500">$100K · MT5 48213</span><span>Phase 1</span><span><span style="font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(245,181,68,0.15);color:#f5b544">Near limit</span></span><span style="text-align:right">$100,860</span><span style="text-align:right">$860 of $8,000</span><span style="text-align:right">$9,140</span><span style="text-align:right;color:#9aa6ba">8 Sep</span></div>
+        <div style="display:grid;grid-template-columns:1.4fr 0.8fr 0.8fr 1fr 1fr 1fr 0.8fr;padding:0 16px;height:40px;align-items:center;border-bottom:1px solid rgba(255,255,255,0.09);background:#111a2b"><span style="font-weight:500">$25K · MT5 47390</span><span>Phase 2</span><span><span style="font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(92,225,230,0.15);color:#5ce1e6">Active</span></span><span style="text-align:right">$25,940</span><span style="text-align:right">$910 of $1,250</span><span style="text-align:right">$2,500</span><span style="text-align:right;color:#9aa6ba">3 Sep</span></div>
+        <div style="display:grid;grid-template-columns:1.4fr 0.8fr 0.8fr 1fr 1fr 1fr 0.8fr;padding:0 16px;height:40px;align-items:center;border-bottom:1px solid rgba(255,255,255,0.09);gap:24px"><span style="height:12px;border-radius:4px;background:#111a2b;animation:shimmer 1.4s infinite"></span><span style="height:12px;border-radius:4px;background:#111a2b;animation:shimmer 1.4s infinite"></span><span style="height:12px;border-radius:4px;background:#111a2b;animation:shimmer 1.4s infinite"></span><span style="height:12px;border-radius:4px;background:#111a2b;animation:shimmer 1.4s infinite"></span><span style="height:12px;border-radius:4px;background:#111a2b;animation:shimmer 1.4s infinite"></span><span style="height:12px;border-radius:4px;background:#111a2b;animation:shimmer 1.4s infinite"></span><span style="height:12px;border-radius:4px;background:#111a2b;animation:shimmer 1.4s infinite"></span></div>
+        <div style="padding:28px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center"><div style="font-size:14px;font-weight:500">No passed challenges yet</div><div style="font-size:13px;color:#9aa6ba">Your $25K challenge is $340 from its Phase 2 target.</div></div>
+      </div>
+    </div>
+
+    <!-- Side panel states -->
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="font-size:16px;font-weight:500">Side panel · 440 px · form, submitting, success, error</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.12);border-radius:12px;height:280px;display:flex;flex-direction:column;overflow:hidden">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,0.09)"><span style="font-size:14px;font-weight:500">Deposit</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9aa6ba" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></div>
+          <div style="padding:14px;display:flex;flex-direction:column;gap:10px;flex:1"><div style="font-size:12px;color:#9aa6ba">Asset</div><div style="height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.14);display:flex;align-items:center;padding:0 10px;font-size:13px;justify-content:space-between">USDT<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9aa6ba" stroke-width="1.5"><path d="M6 9l6 6 6-6"></path></svg></div><div style="font-size:12px;color:#9aa6ba">Network</div><div style="height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.14);display:flex;align-items:center;padding:0 10px;font-size:13px;justify-content:space-between">TRC20<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9aa6ba" stroke-width="1.5"><path d="M6 9l6 6 6-6"></path></svg></div></div>
+          <div style="padding:12px 14px;border-top:1px solid rgba(255,255,255,0.09)"><div style="height:36px;border-radius:8px;background:#fff;color:#060b14;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center">Continue</div></div>
+        </div>
+        <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.12);border-radius:12px;height:280px;display:flex;flex-direction:column;overflow:hidden">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,0.09)"><span style="font-size:14px;font-weight:500">Withdraw</span></div>
+          <div style="padding:14px;display:flex;flex-direction:column;gap:10px;flex:1;opacity:.5"><div style="font-size:12px;color:#9aa6ba">Amount</div><div style="height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.14);display:flex;align-items:center;padding:0 10px;font-size:13px">250.00 USDT</div><div style="font-size:12px;color:#9aa6ba">You receive</div><div style="font-size:14px">249.00 USDT</div></div>
+          <div style="padding:12px 14px;border-top:1px solid rgba(255,255,255,0.09)"><div style="height:36px;border-radius:8px;background:rgba(255,255,255,0.2);color:rgba(6,11,20,0.7);font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center;gap:8px"><span style="width:14px;height:14px;border-radius:50%;border:2px solid rgba(6,11,20,0.3);border-top-color:#060b14"></span>Submitting…</div></div>
+        </div>
+        <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.12);border-radius:12px;height:280px;display:flex;flex-direction:column;overflow:hidden">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,0.09)"><span style="font-size:14px;font-weight:500">Checkout</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9aa6ba" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></div>
+          <div style="padding:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;flex:1;text-align:center"><span style="width:32px;height:32px;border-radius:50%;background:rgba(52,211,153,0.15);display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg></span><div style="font-size:15px;font-weight:500">Your $50K challenge is live</div><div style="font-size:12px;color:#9aa6ba">Credentials arrive within 10 minutes.</div></div>
+          <div style="padding:12px 14px;border-top:1px solid rgba(255,255,255,0.09)"><div style="height:36px;border-radius:8px;background:#5ce1e6;color:#060b14;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center">Open account</div></div>
+        </div>
+        <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.12);border-radius:12px;height:280px;display:flex;flex-direction:column;overflow:hidden">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,0.09)"><span style="font-size:14px;font-weight:500">Withdraw</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9aa6ba" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></div>
+          <div style="padding:14px;display:flex;flex-direction:column;gap:10px;flex:1"><div style="padding:10px 12px;border-radius:8px;background:rgba(242,109,109,0.12);border:1px solid rgba(242,109,109,0.3);font-size:12px;color:#f26d6d">The 2FA code has expired. Enter a new one.</div><div style="font-size:12px;color:#9aa6ba">2FA code</div><div style="height:36px;border-radius:8px;border:1px solid #f26d6d;display:flex;align-items:center;padding:0 10px;font-size:13px">482 019</div></div>
+          <div style="padding:12px 14px;border-top:1px solid rgba(255,255,255,0.09)"><div style="height:36px;border-radius:8px;background:#fff;color:#060b14;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center">Try again</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Account card breached header + position card -->
+    <div style="grid-column:1/4;display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="font-size:16px;font-weight:500">Account card · breached header</div>
+        <div style="background:#0b1220;border:1px solid rgba(242,109,109,0.35);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px">
+            <div><div style="font-size:16px;font-weight:500">$10K challenge · Phase 1</div><div style="font-size:12px;color:#9aa6ba;margin-top:2px">MT5 44018 · Rules v1 · Ended 14 Aug 2026</div></div>
+            <span style="font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(242,109,109,0.15);color:#f26d6d">Breached</span>
+          </div>
+          <div style="font-size:13px;color:#f26d6d">Daily loss limit exceeded at 15:42 server time at equity $9,480.</div>
+          <div style="height:36px;padding:0 16px;border-radius:8px;background:#5ce1e6;color:#060b14;font-size:14px;font-weight:500;display:flex;align-items:center;justify-content:center;align-self:flex-start">Retry with 20% off</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="font-size:16px;font-weight:500">Position card · withdraw disabled</div>
+        <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:16px">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start"><div><div style="font-size:16px;font-weight:500">Profit share</div><div style="font-size:13px;color:#9aa6ba;margin-top:2px">USDT · bot-traded pool</div></div><span style="font-size:12px;padding:2px 8px;border-radius:999px;background:rgba(242,109,109,0.15);color:#f26d6d">In loss</span></div>
+          <div style="display:flex;gap:24px"><div><div style="font-size:12px;color:#9aa6ba">Principal</div><div style="font-size:16px;font-weight:500;margin-top:2px">1,000.00 USDT</div></div><div><div style="font-size:12px;color:#9aa6ba">Current value</div><div style="font-size:16px;font-weight:500;margin-top:2px">982.40 USDT <span style="font-size:12px;color:#f26d6d">−17.60</span></div></div></div>
+          <div style="font-size:13px;color:#9aa6ba">Nothing to transfer while value is below principal</div>
+          <div style="height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.35);font-size:14px;font-weight:500;display:flex;align-items:center;justify-content:center">Transfer profit</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="font-size:16px;font-weight:500">Confirm dialog</div>
+        <div style="background:#0b1220;border:1px solid rgba(255,255,255,0.14);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-size:16px;font-weight:500">Cancel this position?</div>
+          <div style="font-size:14px;color:#9aa6ba;line-height:1.5">982.40 USDT will be returned to your wallet within 24 hours. That is 17.60 USDT less than your principal.</div>
+          <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:4px"><div style="height:36px;padding:0 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.14);font-size:14px;font-weight:500;display:flex;align-items:center">Keep position</div><div style="height:36px;padding:0 14px;border-radius:8px;background:#f26d6d;color:#060b14;font-size:14px;font-weight:500;display:flex;align-items:center">Cancel and return 982.40 USDT</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
+</x-dc>
+</body>
+</html>
