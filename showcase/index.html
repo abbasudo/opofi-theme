@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Opofi Dashboard — Showcase</title>
+<link rel="icon" type="image/svg+xml" href="../design/assets/icon-gradient.svg">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="showcase.css">
+</head>
+<body class="opofi-root">
+<div id="app" class="app">
+  <aside class="rail" id="rail">
+    <a class="rail-brand" href="#/"><img src="../design/assets/logo.svg" alt="Opofi"><span>Dashboard redesign</span></a>
+    <nav class="rail-nav" id="railNav" aria-label="Screens"></nav>
+    <div class="rail-foot">
+      <a href="../design/">Open raw design canvas</a>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <main class="main">
+    <header class="bar" id="bar">
+      <button class="icon-btn only-narrow" id="menuBtn" aria-label="Screens">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <div class="bar-title">
+        <div class="bar-eyebrow" id="eyebrow"></div>
+        <div class="bar-name" id="screenName"></div>
+      </div>
+      <div class="seg" id="viewSeg" role="tablist" aria-label="View"></div>
+      <div class="bar-actions">
+        <a class="btn ghost hide-narrow" id="requestBtn" target="_blank" rel="noopener">Request a change</a>
+        <button class="btn ghost hide-narrow" id="presentBtn" title="Present (F)">Present</button>
+        <button class="icon-btn" id="prevBtn" aria-label="Previous screen" title="Previous (←)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+        <span class="counter" id="counter"></span>
+        <button class="icon-btn" id="nextBtn" aria-label="Next screen" title="Next (→)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="note" id="note"></div>
+    <div class="stage" id="stage"><div class="loading">Loading the design…</div></div>
+    <div class="hint" id="hint">← → to move between screens · F to present · click the sidebar inside a screen to navigate like the real app</div>
+  </main>
+</div>
+<script src="showcase.js"></script>
+</body>
+</html>
